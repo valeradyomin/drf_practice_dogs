@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from rest_framework.fields import SerializerMethodField
+from rest_framework.fields import SerializerMethodField, IntegerField
 from rest_framework.relations import SlugRelatedField
 
 from app_dogs.models import Dog, Breed
@@ -10,14 +10,6 @@ class DogSerializer(serializers.ModelSerializer):
     class Meta:
         model = Dog
         fields = '__all__'
-
-
-class DogListSerializer(serializers.ModelSerializer):
-    breed = SlugRelatedField(queryset=Breed.objects.all(), slug_field='name')
-
-    class Meta:
-        model = Dog
-        fields = ('breed', 'nickname',)
 
 
 class DogDetailSerializer(serializers.ModelSerializer):

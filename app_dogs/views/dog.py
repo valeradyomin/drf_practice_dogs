@@ -1,7 +1,8 @@
 from rest_framework.generics import RetrieveAPIView, DestroyAPIView, ListAPIView, UpdateAPIView, CreateAPIView
 
 from app_dogs.models import Dog
-from app_dogs.serializers.dog import DogSerializer, DogListSerializer, DogDetailSerializer
+from app_dogs.serializers.breed import DogListSerializer
+from app_dogs.serializers.dog import DogSerializer, DogDetailSerializer
 
 
 class DogCreateView(CreateAPIView):
