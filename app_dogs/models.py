@@ -28,7 +28,8 @@ class Dog(models.Model):
     image = models.ImageField(upload_to='app_dogs/', verbose_name='фотография', **NULLABLE)
     birthday = models.DateField(verbose_name='дата рождения', **NULLABLE)
     email = models.EmailField(verbose_name='почта', **NULLABLE)
-    # owner = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='владелец')
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='владелец', **NULLABLE)
+    is_public = models.BooleanField(default=False)
 
     def __str__(self):
         return self.nickname
