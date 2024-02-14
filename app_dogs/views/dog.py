@@ -2,6 +2,7 @@ from rest_framework.generics import RetrieveAPIView, DestroyAPIView, ListAPIView
 from rest_framework.permissions import IsAuthenticated
 
 from app_dogs.models import Dog
+from app_dogs.paginators import DogPaginator
 from app_dogs.permissions import IsModerator, IsDogOwner, IsDogPublic
 from app_dogs.serializers.breed import DogListSerializer
 from app_dogs.serializers.dog import DogSerializer, DogDetailSerializer
@@ -34,6 +35,7 @@ class DogListView(ListAPIView):
     queryset = Dog.objects.all()
     serializer_class = DogListSerializer
     permission_classes = [IsAuthenticated]
+    pagination_class = DogPaginator
 
 
 class DogUpdateView(UpdateAPIView):
