@@ -4,9 +4,12 @@ from rest_framework.relations import SlugRelatedField
 
 from app_dogs.models import Dog, Breed
 from app_dogs.serializers.breed import BreedDetailSerializer
+from app_dogs.validators import validator_scam_words
 
 
 class DogSerializer(serializers.ModelSerializer):
+    nickname = serializers.CharField(validators=[validator_scam_words])
+
     class Meta:
         model = Dog
         fields = '__all__'
