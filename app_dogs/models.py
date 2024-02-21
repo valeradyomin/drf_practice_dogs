@@ -30,6 +30,7 @@ class Dog(models.Model):
     email = models.EmailField(verbose_name='почта', **NULLABLE)
     owner = models.ForeignKey(User, on_delete=models.CASCADE, verbose_name='владелец', **NULLABLE)
     is_public = models.BooleanField(default=False)
+    price = models.PositiveIntegerField(default=100, verbose_name='цена', **NULLABLE)
 
     def __str__(self):
         return self.nickname
