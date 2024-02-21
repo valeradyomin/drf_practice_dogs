@@ -20,6 +20,7 @@ class DogDetailView(RetrieveAPIView):
     queryset = Dog.objects.all()
     serializer_class = DogDetailSerializer
     permission_classes = [IsAuthenticated, IsModerator | IsDogOwner | IsDogPublic]
+    # permission_classes = [AllowAny]
 
 
 class DogDeleteView(DestroyAPIView):
