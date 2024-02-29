@@ -9,6 +9,7 @@ from app_dogs.paginators import DogPaginator
 from app_dogs.permissions import IsModerator, IsDogOwner, IsDogPublic
 from app_dogs.serializers.breed import DogListSerializer
 from app_dogs.serializers.dog import DogSerializer, DogDetailSerializer
+from app_dogs.tasks import send_message_about_like
 from users.models import User
 
 
@@ -59,6 +60,9 @@ class SetLikeToDog(APIView):
     def post(self, request):
         user = get_object_or_404(User, pk=request.data.get('user'))
         dog = get_object_or_404(Dog, pk=request.data.get('dog'))
-        dog.likes.add(user)
+        if dog.likes.filter(pk=user.pk).exists():
+            return Response({'result': f'Пользователь {user} уже добавил ранее like к {dog}'}, status=200)
 
+        send_message_about_like.delay(user.username)
+        dog.likes.add(user)
         return Response({'result': f'Пользователь {user} добавил like к {dog}'}, status=200)
