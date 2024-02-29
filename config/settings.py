@@ -164,3 +164,26 @@ SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=55),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
 }
+
+# URL-адрес брокера сообщений
+CELERY_BROKER_URL = 'redis://localhost:6379/0'
+
+# URL-адрес брокера результатов, также Redis
+CELERY_RESULT_BACKEND = 'redis://localhost:6379/0'
+
+# Часовой пояс для работы Celery
+CELERY_TIMEZONE = 'Europe/Moscow'
+
+# Флаг отслеживания выполнения задач
+# CELERY_TASK_TRACK_STARTED = True
+
+# Максимальное время на выполнение задачи
+# CELERY_TASK_TIME_LIMIT = 30 * 60
+
+# Настройки для Celery, чтобы использовать периодические задачи
+# CELERY_BEAT_SCHEDULE = {
+#     'task-name': {
+#         'task': 'myapp.tasks.my_task',  # Путь к задаче
+#         'schedule': timedelta(minutes=10),  # Расписание выполнения задачи (например, каждые 10 минут)
+#     },
+# }
