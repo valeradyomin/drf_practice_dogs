@@ -189,3 +189,5 @@ CELERY_TIMEZONE = 'Europe/Moscow'
 #         'schedule': timedelta(minutes=10),  # Расписание выполнения задачи (например, каждые 10 минут)
 #     },
 # }
+
+TELEGRAM_BOT_TOKEN = os.getenv('TELEGRAM_BOT_TOKEN')
