@@ -5,10 +5,8 @@ from config import settings
 
 class MyTelegramBot:
     URL = 'https://api.telegram.org/bot'
-    # TOKEN = settings.TELEGRAM_BOT_TOKEN
-    # CHAT_ID = settings.TELEGRAM_BOT_CHAT_ID
-    TOKEN = ''
-    CHAT_ID = ''
+    TOKEN = settings.TELEGRAM_BOT_TOKEN
+    CHAT_ID = settings.TELEGRAM_BOT_CHAT_ID
 
     def send_message(self, text):
         requests.post(
