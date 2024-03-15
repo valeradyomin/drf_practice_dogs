@@ -1,0 +1,78 @@
+[
+  {
+    "model": "app_dogs.breed",
+    "pk": 1,
+    "fields": {
+      "name": "Taxa",
+      "description": null
+    }
+  },
+  {
+    "model": "app_dogs.breed",
+    "pk": 2,
+    "fields": {
+      "name": "Pudel",
+      "description": null
+    }
+  },
+  {
+    "model": "app_dogs.dog",
+    "pk": 1,
+    "fields": {
+      "breed": 1,
+      "nickname": "Sousage",
+      "image": "",
+      "birthday": null,
+      "email": null,
+      "owner": null,
+      "is_public": true,
+      "price": 155,
+      "likes": []
+    }
+  },
+  {
+    "model": "app_dogs.dog",
+    "pk": 2,
+    "fields": {
+      "breed": 1,
+      "nickname": "Sosiska",
+      "image": "",
+      "birthday": null,
+      "email": null,
+      "owner": null,
+      "is_public": false,
+      "price": 100,
+      "likes": []
+    }
+  },
+  {
+    "model": "app_dogs.dog",
+    "pk": 3,
+    "fields": {
+      "breed": 1,
+      "nickname": "Karapuz",
+      "image": "",
+      "birthday": null,
+      "email": null,
+      "owner": null,
+      "is_public": false,
+      "price": 100,
+      "likes": []
+    }
+  },
+  {
+    "model": "app_dogs.dog",
+    "pk": 4,
+    "fields": {
+      "breed": 2,
+      "nickname": "Kucheryashka",
+      "image": "",
+      "birthday": null,
+      "email": null,
+      "owner": null,
+      "is_public": false,
+      "price": 100,
+      "likes": []
+    }
+  }
+]
