@@ -98,7 +98,7 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
+        'NAME': 'drf_practice_dogs',
         'USER': 'postgres',
         'PASSWORD': 'mysecretpassword',
         'HOST': 'db',
