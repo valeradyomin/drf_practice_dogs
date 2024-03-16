@@ -179,11 +179,14 @@ SIMPLE_JWT = {
     'REFRESH_TOKEN_LIFETIME': timedelta(days=1),
 }
 
-# URL-адрес брокера сообщений
-CELERY_BROKER_URL = 'redis://localhost:6379/1'
+# # URL-адрес брокера сообщений
+# CELERY_BROKER_URL = 'redis://localhost:6379/1'
+# # URL-адрес брокера результатов, также Redis
+# CELERY_RESULT_BACKEND = 'redis://localhost:6379/1'
 
-# URL-адрес брокера результатов, также Redis
-CELERY_RESULT_BACKEND = 'redis://localhost:6379/1'
+# Settings for Celery into Docker
+CELERY_BROKER_URL = 'redis://redis:6379/1'
+CELERY_RESULT_BACKEND = 'redis://redis:6379/1'
 
 # Часовой пояс для работы Celery
 CELERY_TIMEZONE = 'Europe/Moscow'
